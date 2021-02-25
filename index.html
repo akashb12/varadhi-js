@@ -8,15 +8,17 @@
 <body>
     <h1>Min = <span  id="min"></span> and Max = <span  id="max"></span></h1>
 <script>
-const arr = [1,3,5,7,9]
-let maxFourNum = arr.slice(1);
-let minFourNum = arr.slice(0, -1);
-const sum = arr.reduce((acc, total) => acc + total, 0);
+let arr = [1,31,5,7,9]
+const sortArray = arr.sort(function (a, b) {  return a - b;  });
+console.log('sortArray',sortArray)
+let maxFourNum = sortArray.slice(1);
+let minFourNum = sortArray.slice(0, -1);
+const sum = sortArray.reduce((acc, total) => acc + total, 0);
 const min = document.getElementById('min');
 const max = document.getElementById('max');
-min.innerHTML=sum - arr[arr.length - 1];
-max.innerText=sum - arr[0];
-console.log("Min =", sum - arr[arr.length - 1],"and", "Max =", sum - arr[0]  )
+min.innerHTML=sum - sortArray[sortArray.length - 1];
+max.innerText=sum - sortArray[0];
+console.log("Min =", sum - sortArray[sortArray.length - 1],"and", "Max =", sum - sortArray[0] )
 </script>
 </body>
 </html>
